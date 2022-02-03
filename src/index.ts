@@ -1,8 +1,13 @@
-import express from "express"
-const app = express()
-const PORT = 9001
+import dotenv from 'dotenv'
+import { connectMongo } from '@config/index'
+import server from '@api/server'
+import { logger } from '@shared/helpers'
+dotenv.config()
 
-app.get("/health", (_req, res) => res.status(200).send("Server is running!"))
+async function main() {
+  await connectMongo()
+  server
+  logger.info('Done!')
+}
 
-app.listen(PORT)
-console.log(`server is listening on port ${PORT}...\n`)
+main()

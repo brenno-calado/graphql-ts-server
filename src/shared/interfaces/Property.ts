@@ -5,8 +5,14 @@ export interface Location {
 
 export type Rating = 0 | 1 | 2 | 3 | 4 | 5
 
+export enum Status {
+  inactive = 'inactive',
+  active = 'active'
+}
+
 export interface Property {
   id: string
+  status: Status
   image: string
   address: string
   price: number
