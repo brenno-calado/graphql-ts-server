@@ -3,7 +3,14 @@ export interface Location {
   long: number
 }
 
-export type Rating = 0 | 1 | 2 | 3 | 4 | 5
+export enum Rating {
+  ZERO,
+  ONE,
+  TWO,
+  THREE,
+  FOUR,
+  FIVE
+}
 
 export enum Status {
   inactive = 'inactive',
@@ -12,14 +19,15 @@ export enum Status {
 
 export interface Property {
   id: string
+  title: string
   status: Status
   image: string
   address: string
   price: number
   area: number
-  parkingSpaces: number
+  parkingSpaces?: number
   numOfBedrooms: number
   numOfBathrooms: number
-  rating: Rating
+  rating?: Rating
   location: Location
 }

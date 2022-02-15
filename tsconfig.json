@@ -14,7 +14,9 @@
       "@config/*": ["config/*"],
       "@shared/*": ["shared/*"],
       "@spec/*": ["spec/*"],
-      "@test/*": ["__test__/*"]
+      "@schema/*": ["api/schema/*"],
+      "@test/*": ["__test__/*"],
+      "@domain/*": ["core/domain/*"]
     },
     "rootDir": "src",
     "strict": true,
